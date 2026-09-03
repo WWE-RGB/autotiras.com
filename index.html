@@ -1,11 +1,108 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>autotiras | Авторынок и Автопарковка ПМР</title>
+    <!-- Иконки Font Awesome для красивого отображения кнопок -->
+    <link rel="stylesheet" href="https://cloudflare.com">
+    <!-- Подключение изолированного файла стилей -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <h1>Привет мир!</h1>
- </body>
+
+    <div class="container">
+        
+        <!-- Главный блок профиля -->
+        <header class="profile">
+            <div class="avatar-container">
+                <div class="avatar">
+                    <i class="fa-solid fa-square-parking"></i>
+                </div>
+            </div>
+            <h1 class="username">@autotiras</h1>
+            <p class="bio">🏙️ Авторынок & Автопарковка в Тирасполе. Продажа, обмен, комиссия и надежное хранение вашего авто. Охрана 24/7, отличный обзор прямо с дороги!</p>
+        </header>
+
+        <!-- Главное рекламное предложение (Баннер) -->
+        <section class="promo-banner" id="parkingPromo">
+            <span class="promo-tag">Комиссия</span>
+            <h2 class="promo-title"><i class="fa-solid fa-car-on"></i> Поставить авто на продажу</h2>
+            <p class="promo-text">Пригоняйте ваш автомобиль к нам на площадку. Мы берём на себя рекламу, показы покупателям и полное оформление сделки!</p>
+        </section>
+
+        <!-- Кнопки быстрых действий -->
+        <main class="links-list">
+            
+            <a href="https://www.instagram.com/autotiras?igsi=MW9ydmd5d2Jsc292dg==" class="link-item instagram-catalog-link" id="catalogOpen" target="_blank">
+                <i class="fa-brands fa-instagram" style="color: #e1306c;"></i>
+                    <span>Каталог авто в Instagram</span>
+                    <i class="fa-solid fa-chevron-right arrow"></i>
+            </a>
+
+
+            <a href="viber://chat?number=%2B37377700000" class="link-item viber-link" target="_blank">
+                <i class="fa-brands fa-viber"></i>
+                <span>Консультация в Viber</span>
+                <i class="fa-solid fa-chevron-right arrow"></i>
+            </a>
+
+            <a href="https://t.me" class="link-item telegram-link" target="_blank">
+                <i class="fa-brands fa-telegram"></i>
+                <span>Наш Telegram (Свежие поступления)</span>
+                <i class="fa-solid fa-chevron-right arrow"></i>
+            </a>
+
+            <a href="https://wa.me" class="link-item whatsapp-link" target="_blank">
+                <i class="fa-brands fa-whatsapp"></i>
+                <span>Написать в WhatsApp</span>
+                <i class="fa-solid fa-chevron-right arrow"></i>
+            </a>
+
+            <a href="tel:+37377700000" class="link-item phone-link">
+                <i class="fa-solid fa-phone-volume"></i>
+                <span>Позвонить администрации</span>
+                <i class="fa-solid fa-chevron-right arrow"></i>
+            </a>
+
+        </main>
+
+        <!-- Подвал -->
+        <footer class="footer">
+            <p>&copy; 2026 autotiras | Авторынок Тирасполь</p>
+        </footer>
+    </div>
+
+    <!-- Модальное окно 1: Условия парковки/комиссии -->
+    <div class="modal-overlay" id="parkingModal">
+        <div class="modal-content">
+            <button class="close-btn" id="closeParking">&times;</button>
+            <div class="modal-body">
+                <h3 class="modal-title">Размещение автомобиля</h3>
+                <p class="modal-desc">Свяжитесь с нами прямо сейчас. Мы расскажем о стоимости стоянки, условиях предпродажной подготовки и поможем выгодно продать машину.</p>
+                <div class="modal-buttons">
+                    <a href="viber://chat?number=%2B37377700000" class="btn btn-viber">Связаться в Viber</a>
+                    <a href="https://t.me" class="btn btn-telegram">Написать в Telegram</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Модальное окно 2: Переход к просмотру каталога -->
+    <div class="modal-overlay" id="catalogModal">
+        <div class="modal-content">
+            <button class="close-btn" id="closeCatalog">&times;</button>
+            <div class="modal-body">
+                <h3 class="modal-title">Актуальный ассортимент</h3>
+                <p class="modal-desc">Список всех машин, находящихся на нашей автопарковке с ценами и описанием, обновляется ежедневно  в Instagram.</p>
+                <div class="modal-buttons">
+                    <a href="https://www.instagram.com/autotiras?igsi=MW9ydmd5d2Jsc292dg==" class="btn btn-accent">Перейти в  Каталог авто в Instagram</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Подключение изолированного файла логики -->
+    <script src="js/script.js"></script>
+</body>
 </html>
