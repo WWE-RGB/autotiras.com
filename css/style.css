@@ -275,3 +275,72 @@ body {
     padding: 15px 0;
     opacity: 0.5;
 }
+/* Блок карты */
+.map-section {
+    background-color: var(--card-bg);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    border-radius: 16px;
+    padding: 16px;
+    margin-bottom: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.map-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.map-info i {
+    font-size: 20px;
+    color: var(--accent-color);
+}
+
+.map-title {
+    font-size: 13px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.map-address {
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.map-container {
+    width: 100%;
+    height: 180px;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.map-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background-color: #202632;
+    color: var(--text-main);
+    text-decoration: none;
+    padding: 12px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: background-color 0.2s;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.map-btn:hover {
+    background-color: #28303f;
+}
