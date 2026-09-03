@@ -1,3 +1,277 @@
-h1{
-    color:brown;
+:root {
+    --bg-color: #0f1115;
+    --card-bg: #181c24;
+    --accent-color: #ffc107; /* Автомобильный желтый оттенок */
+    --accent-text: #121212;
+    --text-main: #ffffff;
+    --text-muted: #8e9aaf;
+    --viber-color: #7360f2;
+    --telegram-color: #0088cc;
+    --whatsapp-color: #25d366;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding: 20px 12px;
+}
+
+.container {
+    width: 100%;
+    max-width: 480px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Стилизация профиля */
+.profile {
+    text-align: center;
+    margin-bottom: 25px;
+    margin-top: 10px;
+}
+
+.avatar-container {
+    display: inline-block;
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.avatar {
+    width: 105px;
+    height: 105px;
+    border-radius: 50%;
+    background: #222831;
+    border: 3px solid var(--accent-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 15px rgba(255, 193, 7, 0.2);
+}
+
+.avatar i {
+    font-size: 45px;
+    color: var(--accent-color);
+}
+
+.username {
+    font-size: 24px;
+    font-weight: 800;
+    margin-bottom: 8px;
+    letter-spacing: -0.5px;
+}
+
+.bio {
+    font-size: 14px;
+    color: var(--text-muted);
+    line-height: 1.5;
+    max-width: 360px;
+    margin: 0 auto;
+}
+
+/* Стилизация главного промо-баннера */
+.promo-banner {
+    background: linear-gradient(135deg, #1e2330 0%, #14171f 100%);
+    border-left: 4px solid var(--accent-color);
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    position: relative;
+}
+
+.promo-banner:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+}
+
+.promo-banner .promo-title i {
+    color: var(--accent-color);
+}
+
+.promo-tag {
+    position: absolute;
+    top: 12px;
+    right: 15px;
+    font-size: 11px;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: var(--accent-color);
+    letter-spacing: 0.5px;
+}
+
+.promo-title {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.promo-text {
+    font-size: 13.5px;
+    color: var(--text-muted);
+    line-height: 1.4;
+}
+
+/* Стилизация списка кнопкок-ссылок */
+.links-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 35px;
+}
+
+.link-item {
+    background-color: var(--card-bg);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    border-radius: 14px;
+    padding: 16px 18px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--text-main);
+    font-size: 15.5px;
+    font-weight: 600;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+.link-item:hover {
+    background-color: #202632;
+    transform: scale(1.005);
+}
+
+.link-item i:first-child {
+    font-size: 20px;
+    margin-right: 14px;
+    width: 24px;
+    text-align: center;
+}
+
+.link-item .arrow {
+    margin-left: auto;
+    font-size: 13px;
+    color: var(--text-muted);
+}
+
+/* Кастомное окрашивание брендовых иконок */
+.catalog-link i:first-child { color: var(--accent-color); }
+.viber-link i:first-child { color: var(--viber-color); }
+.telegram-link i:first-child { color: var(--telegram-color); }
+.whatsapp-link i:first-child { color: var(--whatsapp-color); }
+.phone-link i:first-child { color: #00adb5; }
+
+/* Стилизация интерактивных всплывающих окон (Модалок) */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease;
+    z-index: 1000;
+    padding: 16px;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal-content {
+    background-color: var(--card-bg);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 18px;
+    width: 100%;
+    max-width: 400px;
+    position: relative;
+    transform: translateY(15px);
+    transition: transform 0.25s ease;
+}
+
+.modal-overlay.active .modal-content {
+    transform: translateY(0);
+}
+
+.modal-body {
+    padding: 24px;
+    text-align: center;
+}
+
+.modal-title {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.modal-desc {
+    font-size: 14px;
+    color: var(--text-muted);
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.close-btn {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.modal-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.btn {
+    width: 100%;
+    padding: 14px;
+    border-radius: 10px;
+    border: none;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+}
+
+.btn-accent {
+    background-color: var(--accent-color);
+    color: var(--accent-text);
+}
+
+.btn-viber { background-color: var(--viber-color); color: #fff; }
+.btn-telegram { background-color: var(--telegram-color); color: #fff; }
+
+.footer {
+    margin-top: auto;
+    font-size: 12px;
+    color: var(--text-muted);
+    text-align: center;
+    padding: 15px 0;
+    opacity: 0.5;
 }
