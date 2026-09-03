@@ -17,18 +17,18 @@
         <header class="profile">
             <div class="avatar-container">
                 <div class="avatar">
-                    <i class="fa-solid fa-square-parking"><img src="img/logo.jpg" alt="logo"></i>
+                    <i class="fa-solid fa-square-parking"><img src="img/logo.jpg" alt=""></i>
                 </div>
             </div>
             <h1 class="username">@autotiras</h1>
-            <p class="bio">🏙️ Авторынок & Автопарковка в Тирасполе. Продажа, обмен и комиссия. Круглосуточная охрана и видеонаблюдение 24/7!</p>
+            <p class="bio">Авторынок & Автопарковка в Тирасполе. Продажа, обмен и комиссия. Круглосуточная охрана и видеонаблюдение 24/7!</p>
         </header>
 
         <!-- Главный рекламный баннер -->
         <section class="promo-banner" id="parkingPromo">
-            <span class="promo-tag">Парковка</span>
+            <span class="promo-tag">Цена услуг</span>
             <h2 class="promo-title"><i class="fa-solid fa-car-on"></i> Поставить авто на продажу</h2>
-            <p class="promo-text">Будни — 5 руб/день, Выходные — 20 руб/день. Добавление фото вашей машины на нашу страницу — БЕСПЛАТНО!</p>
+            <!--<p class="promo-text">Будни — 5 руб/день, Выходные — 20 руб/день. Добавление фото вашей машины на нашу страницу — БЕСПЛАТНО!</p>-->
         </section>
 
         <!-- Кнопки-ссылки -->
@@ -84,6 +84,7 @@
     </div>
 
     <!-- Модальное окно 1: Условия размещения авто -->
+     <!--
     <div class="modal-overlay" id="parkingModal">
         <div class="modal-content">
             <button class="close-btn" id="closeParking">&times;</button>
@@ -93,6 +94,36 @@
                 <div class="modal-buttons">
                     <a href="viber://chat?number=37377789655" class="btn btn-viber">Написать в Viber</a>
                     <a href="https://wa.me" class="btn btn-whatsapp">Написать в WhatsApp</a>
+                </div>
+            </div>
+        </div>
+    </div>-->
+        <!-- Модальное окно 1: Условия размещения авто с ТАБЛИЦЕЙ -->
+    <div class="modal-overlay" id="parkingModal">
+        <div class="modal-content">
+            <button class="close-btn" id="closeParking">&times;</button>
+            <div class="modal-body">
+                <h3 class="modal-title">Стоимость автопарковки</h3>
+                <p class="modal-desc" style="margin-bottom: 12px;">Ваш автомобиль под круглосуточной охраной и видеонаблюдением.</p>
+                
+                <!-- Таблица цен по дням недели -->
+                <div class="price-table-container">
+                    <table class="price-table">
+                        <tr><td>Понедельник</td><td class="price-red">5 руб.</td></tr>
+                        <tr><td>Вторник</td><td class="price-red">5 руб.</td></tr>
+                        <tr><td>Среда</td><td class="price-red">5 руб.</td></tr>
+                        <tr><td>Четверг</td><td class="price-red">5 руб.</td></tr>
+                        <tr><td>Пятница</td><td class="price-red">5 руб.</td></tr>
+                        <tr class="weekend-row"><td>Суббота</td><td class="price-red">20 руб.</td></tr>
+                        <tr class="weekend-row"><td>Воскресенье</td><td class="price-red">20 руб.</td></tr>
+                    </table>
+                </div>
+                
+                <p class="free-bonus-text">🎁 Добавление фото автомобиля на страничку для клиентов рынка — <strong>БЕСПЛАТНО.</strong></p>
+
+                <div class="modal-buttons">
+                    <a href="viber://chat?number=%2B37377700000" class="btn btn-viber"><i class="fa-brands fa-viber"></i> Написать в Viber</a>
+                    <!--<a href="https://wa.me" class="btn btn-whatsapp"><i class="fa-brands fa-whatsapp"></i> Написать в WhatsApp</a>-->
                 </div>
             </div>
         </div>
