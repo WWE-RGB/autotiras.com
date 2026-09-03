@@ -126,8 +126,8 @@ body {
     line-height: 1.4;
 }
 */
-
-/* Крутой баннер в стиле AUTOTIRAS */
+/*========================================================================================*/
+/* Крутой баннер в стиле AUTOTIRAS 
 .promo-banner {
     position: relative;
     background: linear-gradient(rgba(15, 17, 21, 0.75), rgba(15, 17, 21, 0.85)), url('') no-repeat center center;
@@ -143,14 +143,14 @@ body {
    
 }
 
-/* Эффект при наведении на баннер */
+/* Эффект при наведении на баннер 
 .promo-banner:hover {
     transform: translateY(-3px);
     border-color: rgba(255, 77, 77, 0.6);
     box-shadow: 0 8px 25px rgba(255, 77, 77, 0.2);
 }
 
-/* Красный ярлык "Парковка" сверху справа */
+/* Красный ярлык "Парковка" сверху справа 
 .promo-tag {
     position: absolute;
     top: 12px;
@@ -166,7 +166,7 @@ body {
     box-shadow: 0 2px 8px rgba(255, 51, 51, 0.4);
 }
 
-/* Заголовок баннера */
+/* Заголовок баннера 
 .promo-title {
     font-size: 19px;
     font-weight: 800;
@@ -178,13 +178,13 @@ body {
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
 }
 
-/* Иконка машинки в заголовке — делаем её неоново-красной */
+/* Иконка машинки в заголовке — делаем её неоново-красной 
 .promo-title i {
     color: #ff3333 !important;
     filter: drop-shadow(0 0 5px rgba(255, 51, 51, 0.6));
 }
 
-/* Текст внутри баннера */
+/* Текст внутри баннера 
 .promo-text {
     font-size: 14px;
     color: #e0e6ed;
@@ -193,7 +193,92 @@ body {
     text-shadow: 0 1px 3px rgba(0, 0, 0, 0.9);
 }
 
+/*============================================================================*/
 
+
+/*мобильный банер*/
+/* Адаптивный мобильный баннер AUTOTIRAS */
+.promo-banner {
+    position: relative;
+    /* Корректный путь из папки css/ в папку img/ */
+    background: linear-gradient(135deg, rgba(20, 24, 33, 0.85) 0%, rgba(10, 12, 16, 0.95) 100%), url('') no-repeat center center;
+    background-size: cover;
+    border: 1px solid rgba(255, 77, 77, 0.2);
+    border-radius: 14px;
+    padding: 20px 16px; /* Оптимальные мобильные отступы */
+    margin-bottom: 20px;
+    cursor: pointer;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 85px; /* Защита от схлопывания на мелких экранах */
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    
+    /* Запрет выделения текста при случайном тапе на телефоне */
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+}
+
+/* Эффект нажатия на смартфоне */
+.promo-banner:hover {
+    transform: translateY(-3px);
+    border-color: rgba(255, 77, 77, 0.6);
+    box-shadow: 0 8px 25px rgba(255, 77, 77, 0.2);
+}
+
+/* Стильный компактный тег "Цена услуг" */
+.promo-tag {
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    background-color: #ff3333;
+    color: #ffffff;
+    font-size: 9px;
+    font-weight: 800;
+    padding: 3px 8px;
+    border-radius: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Заголовок, адаптированный под одну строку на мобильных */
+.promo-title {
+    font-size: 16px; /* Идеальный размер для читаемости на iPhone/Android */
+    font-weight: 700;
+    color: #ffffff;
+    margin-top: 10px; /* Отступ от тега сверху */
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding-right: 25px; /* Защита от накладывания на стрелочку */
+}
+
+/* Иконка машинки */
+.promo-title i {
+    color: var(--accent-color, #ffc107) !important;
+    font-size: 18px;
+}
+
+/* Псевдоэлемент: добавляем аккуратную стрелочку ">" в правый угол для подсказки, что сюда можно нажать */
+.promo-banner::after {
+    content: "\f105"; /* Код стрелочки шеврон в Font Awesome */
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    position: absolute;
+    bottom: 22px;
+    right: 16px;
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 16px;
+    transition: color 0.2s;
+}
+
+.promo-banner:active::after {
+    color: var(--accent-color, #ffc107);
+}
+
+/*конец мобильного банера*/
 
 
 /* Стилизация списка кнопкок-ссылок */
