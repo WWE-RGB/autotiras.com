@@ -78,8 +78,8 @@ body {
     max-width: 360px;
     margin: 0 auto;
 }
-
-/* Стилизация главного промо-баннера */
+/*
+/* Стилизация главного промо-баннера 
 .promo-banner {
     background: linear-gradient(135deg, #1e2330 0%, #14171f 100%);
     border-left: 4px solid var(--accent-color);
@@ -125,6 +125,76 @@ body {
     color: var(--text-muted);
     line-height: 1.4;
 }
+*/
+
+/* Крутой баннер в стиле AUTOTIRAS */
+.promo-banner {
+    position: relative;
+    background: linear-gradient(rgba(15, 17, 21, 0.75), rgba(15, 17, 21, 0.85)), url('') no-repeat center center;
+    background-size: cover;
+    border: 1px solid rgba(255, 77, 77, 0.2);
+    border-radius: 16px;
+    padding: 24px 20px;
+    margin-bottom: 25px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+   
+}
+
+/* Эффект при наведении на баннер */
+.promo-banner:hover {
+    transform: translateY(-3px);
+    border-color: rgba(255, 77, 77, 0.6);
+    box-shadow: 0 8px 25px rgba(255, 77, 77, 0.2);
+}
+
+/* Красный ярлык "Парковка" сверху справа */
+.promo-tag {
+    position: absolute;
+    top: 12px;
+    right: 15px;
+    background-color: #ff3333;
+    color: #ffffff;
+    font-size: 10px;
+    font-weight: 800;
+    padding: 3px 10px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    box-shadow: 0 2px 8px rgba(255, 51, 51, 0.4);
+}
+
+/* Заголовок баннера */
+.promo-title {
+    font-size: 19px;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+/* Иконка машинки в заголовке — делаем её неоново-красной */
+.promo-title i {
+    color: #ff3333 !important;
+    filter: drop-shadow(0 0 5px rgba(255, 51, 51, 0.6));
+}
+
+/* Текст внутри баннера */
+.promo-text {
+    font-size: 14px;
+    color: #e0e6ed;
+    line-height: 1.5;
+    font-weight: 500;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.9);
+}
+
+
+
 
 /* Стилизация списка кнопкок-ссылок */
 .links-list {
@@ -345,3 +415,45 @@ body {
     background-color: #28303f;
 }
 
+/* Стили для таблицы прайс-листа в модальном окне */
+.price-table-container {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.price-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+.price-table td {
+    padding: 8px 10px;
+    text-align: left;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.price-table tr:last-child td {
+    border-bottom: none;
+}
+
+.price-red {
+    text-align: right !important;
+    color: #ff3333;
+    font-weight: 700;
+}
+
+.weekend-row {
+    background-color: rgba(255, 77, 77, 0.03);
+}
+
+.free-bonus-text {
+    font-size: 13px;
+    color: #e0e6ed;
+    line-height: 1.4;
+    margin-bottom: 20px;
+    padding: 0 5px;
+}
