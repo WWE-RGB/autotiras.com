@@ -30,7 +30,10 @@
 </head>
 
 <body>
+<!-- Холст для анимированных 3D звезд -->
+    <canvas id="starfield"></canvas>
 
+    <!-- Весь остальной ваш контент сайта (header, main, sections) пишется ниже -->
     <div class="container">
         
         <!-- Шапка профиля -->
@@ -165,5 +168,67 @@
 
     <!-- Подключение скриптов -->
     <script src="js/script.js"></script>
+
+     <!--фон звездное небо-->
+    <script>
+    const canvas = document.getElementById("starfield");
+    const ctx = canvas.getContext("2d");
+
+    let width = (canvas.width = window.innerWidth);
+    let height = (canvas.height = window.innerHeight);
+
+    const numStars = 400; // Количество звезд (можно увеличить/уменьшить)
+    const stars = [];
+    const speed = 2; // Скорость полета звезд
+
+    // Инициализация звезд в 3D пространстве (X, Y, Z)
+    for (let i = 0; i < numStars; i++) {
+        stars.push({
+            x: Math.random() * width - width / 2,
+            y: Math.random() * height - height / 2,
+            z: Math.random() * width
+        });
+    }
+
+    // Анимационный цикл
+    function animate() {
+        ctx.fillStyle = "rgba(0, 0, 0, 0.2)"; // Небольшой шлейф (эффект размытия скорости)
+        ctx.fillRect(0, 0, width, height);
+
+        for (let i = 0; i < numStars; i++) {
+            let star = stars[i];
+            star.z -= speed; // Двигаем звезду ближе к экрану
+
+            // Если звезда вылетела за экран, сбрасываем ее назад вглубь
+            if (star.z <= 0) {
+                star.z = width;
+                star.x = Math.random() * width - width / 2;
+                star.y = Math.random() * height - height / 2;
+            }
+
+            // 3D проекция на 2D экран
+            const k = 128.0 / star.z;
+            const px = star.x * k + width / 2;
+            const py = star.y * k + height / 2;
+
+            // Если координаты внутри экрана, рисуем звезду
+            if (px >= 0 && px <= width && py >= 0 && py <= height) {
+                const size = (1 - star.z / width) * 3; // Чем ближе звезда, тем она больше
+                ctx.fillStyle = "rgba(255, 255, 255, " + (1 - star.z / width) + ")"; // Эффект плавного появления из темноты
+                ctx.fillRect(px, py, size, size);
+            }
+        }
+
+        requestAnimationFrame(animate);
+    }
+
+    // Корректное изменение размеров при смене разрешения экрана
+    window.addEventListener("resize", () => {
+        width = canvas.width = window.innerWidth;
+        height = canvas.height = window.innerHeight;
+    });
+
+    animate();
+</script>
 </body>
 </html>
